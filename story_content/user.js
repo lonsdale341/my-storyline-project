@@ -15,34 +15,36 @@ var slideWidth = player.slideWidth;
 var slideHeight = player.slideHeight;
 window.Script1 = function()
 {
-  console.log("Код запущен при нажатии на кнопку2");
-// Получаем объект-плеер Storyline
+  // Получаем объект-плеер Storyline
 var player = GetPlayer();
 
-// Извлекаем данные из переменной Storyline (например, "MyVar")
+// Извлекаем данные для отправки (например, из переменной "MyVar")
 var myData = player.GetVar("MyVar");
 
-// Отправляем данные в Make через POST-запрос
-fetch("https://hook.eu2.make.com/uvkorvaepfbkjc7f2n75kxtyues81ekf", {
-  method: "POST",
+// Отправляем запрос в Make
+fetch("https://hook.eu2.make.com/uvkorvaepfbkjc7f2n75kxtyues81ekf
   headers: {
     "Content-Type": "application/json"
   },
   body: JSON.stringify({ data: myData })
 })
 .then(function(response) {
+  // Проверяем, что ответ успешный
   if (!response.ok) {
     throw new Error("Ошибка сети: " + response.statusText);
   }
-  return response.text();
+  // Обрабатываем ответ как JSON
+  return response.json();
 })
 .then(function(result) {
-  // Записываем полученный ответ обратно в переменную Storyline
-  player.SetVar("ResponseVar", result.someField);
-  console.log("Данные успешно отправлены в Make:", result);
+  // Лог для контроля
+  console.log("Ответ от Make:", result);
+  // Записываем полученные данные в переменную Storyline, например, "ResponseVar"
+  // Допустим, нас интересует поле result из ответа
+  player.SetVar("ResponseVar", result.result);
 })
 .catch(function(error) {
-  console.error("Ошибка при отправке данных в Make:", error);
+  console.error("Ошибка при обмене данными с Make:", error);
 });
 }
 
