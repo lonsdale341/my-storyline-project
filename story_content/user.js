@@ -34,7 +34,7 @@ fetch("https://hook.eu2.make.com/uvkorvaepfbkjc7f2n75kxtyues81ekf", {
   if (!response.ok) {
     throw new Error("Ошибка сети: " + response.statusText);
   }
-  return response.json();
+  return response.text();
 })
 .then(function(result) {
   // Записываем полученный ответ обратно в переменную Storyline
