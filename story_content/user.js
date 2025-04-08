@@ -15,7 +15,7 @@ var slideWidth = player.slideWidth;
 var slideHeight = player.slideHeight;
 window.Script1 = function()
 {
-  console.log("Код запущен при нажатии на кнопку");
+  console.log("Код запущен при нажатии на кнопку2");
 // Получаем объект-плеер Storyline
 var player = GetPlayer();
 
