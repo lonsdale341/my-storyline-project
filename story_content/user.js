@@ -23,7 +23,7 @@ var player = GetPlayer();
 var myData = player.GetVar("MyVar");
 
 // Отправляем данные в Make через POST-запрос
-fetch("https://hook.eu2.make.com/m31miecwps3lsk6u6foz323iqhvghdhs", {
+fetch("https://hook.eu2.make.com/uvkorvaepfbkjc7f2n75kxtyues81ekf", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
