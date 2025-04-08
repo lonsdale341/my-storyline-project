@@ -22,7 +22,7 @@ var player = GetPlayer();
 var myData = player.GetVar("MyVar");
 
 // Отправляем запрос в Make
-fetch("https://hook.eu2.make.com/uvkorvaepfbkjc7f2n75kxtyues81ekf
+fetch("https://hook.eu2.make.com/uvkorvaepfbkjc7f2n75kxtyues81ekf"
   headers: {
     "Content-Type": "application/json"
   },
